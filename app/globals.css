@@ -27,11 +27,10 @@ body {
   .tweet-action-btn {
     @apply flex items-center gap-2 text-x-gray text-sm
            transition-colors duration-150 cursor-pointer
-           hover:text-x-blue group;
+           hover:text-x-blue;
   }
   .tweet-action-icon {
-    @apply p-2 rounded-full transition-colors duration-150
-           group-hover:bg-x-blue/10;
+    @apply p-2 rounded-full transition-colors duration-150;
   }
   .btn-primary {
     @apply bg-x-blue hover:bg-x-blue-hover text-white
@@ -54,4 +53,5 @@ body {
            text-x-light text-xl font-medium w-fit
            hover:bg-x-surface transition-colors duration-150 cursor-pointer;
   }
-}
+    }
+    
