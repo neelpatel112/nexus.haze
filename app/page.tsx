@@ -17,10 +17,16 @@ export default function HomePage() {
   const [tab, setTab]             = useState<'for-you' | 'following'>('for-you')
 
   useEffect(() => {
+    let redirected = false
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session) { window.location.href = '/auth'; return }
-      loadProfile(session.user.id)
+      if (!session && !redirected) {
+        redirected = true
+        window.location.replace('/auth')
+        return
+      }
+      if (session) loadProfile(session.user.id)
     })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function loadProfile(uid: string) {
@@ -136,5 +142,4 @@ export default function HomePage() {
       <MobileNav active="home" />
     </div>
   )
-    }
-           
+}
