@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: #000;
+  color: #e7e9ea;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 0px; }
+
+/* Selection */
+::selection { background: #1d9bf033; }
+
+@layer components {
+  .tweet-action-btn {
+    @apply flex items-center gap-2 text-x-gray text-sm
+           transition-colors duration-150 cursor-pointer
+           hover:text-x-blue group;
+  }
+  .tweet-action-icon {
+    @apply p-2 rounded-full transition-colors duration-150
+           group-hover:bg-x-blue/10;
+  }
+  .btn-primary {
+    @apply bg-x-blue hover:bg-x-blue-hover text-white
+           font-bold rounded-full px-5 py-2 text-sm
+           transition-colors duration-150 disabled:opacity-50;
+  }
+  .btn-outline {
+    @apply border border-x-border text-x-light
+           font-bold rounded-full px-5 py-2 text-sm
+           hover:bg-white/10 transition-colors duration-150;
+  }
+  .input-field {
+    @apply w-full bg-transparent border border-x-border
+           rounded-md px-4 py-3 text-x-light text-sm
+           placeholder:text-x-gray outline-none
+           focus:border-x-blue transition-colors duration-150;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-4 px-3 py-3 rounded-full
+           text-x-light text-xl font-medium w-fit
+           hover:bg-x-surface transition-colors duration-150 cursor-pointer;
+  }
+}
