@@ -25,13 +25,13 @@ body {
 
 @layer components {
   .tweet-action-btn {
-    @apply flex items-center gap-2 text-x-gray text-sm
-           transition-colors duration-150 cursor-pointer
-           hover:text-x-blue;
-  }
-  .tweet-action-icon {
-    @apply p-2 rounded-full transition-colors duration-150;
-  }
+  @apply flex items-center gap-2 text-x-gray text-sm
+         transition-colors duration-150 cursor-pointer
+         hover:text-x-blue;
+}
+.tweet-action-icon {
+  @apply p-2 rounded-full transition-colors duration-150;
+}
   .btn-primary {
     @apply bg-x-blue hover:bg-x-blue-hover text-white
            font-bold rounded-full px-5 py-2 text-sm
