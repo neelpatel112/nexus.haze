@@ -10,8 +10,6 @@ const XLogo = () => (
   </svg>
 )
 
-interface NavItem { icon: React.ReactNode; label: string; href: string; active?: boolean }
-
 export default function Sidebar({ active }: { active?: string }) {
   const [profile, setProfile] = useState<Profile | null>(null)
 
@@ -109,4 +107,5 @@ export default function Sidebar({ active }: { active?: string }) {
       )}
     </aside>
   )
-}
+    }
+            
